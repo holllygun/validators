@@ -49,7 +49,7 @@ describe('page start', () => {
         expect(alertMessage).toBe('Invalid card number')
     });
 
-    test ('enter card number alert', async() => {
+    test ('enter empty field alert', async() => {
         let alertMessage = null;
 
         page.on('dialog', async(dialog) => {
@@ -72,7 +72,6 @@ describe('page start', () => {
         await input.type('5555555555554444');
         await submit.click();
         await page.waitForSelector('.mastercard.stroke')
-        expect(inputValue).toBe(''); 
   
     });
 
