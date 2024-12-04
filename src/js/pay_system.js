@@ -35,7 +35,6 @@ export default class PaySystem {
       cardLength < 20
     )
       return "jcb";
-
     else if (
       (50 < firstTwoDigit && firstTwoDigit < 56) ||
       (222099 < firstSixDigit && firstSixDigit < 272100 && cardLength === 16)

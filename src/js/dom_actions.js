@@ -23,7 +23,7 @@ export default class DomActions {
       } else {
         alert("Please enter a card number");
       }
-      inputField.value = ''
+      inputField.value = "";
     });
   }
 
@@ -35,7 +35,6 @@ export default class DomActions {
       console.log(currentSystem);
       const stroke = document.querySelector(`.${currentSystem}`);
       stroke.classList.add("stroke");
-
     } else {
       alert("Invalid card number");
     }
