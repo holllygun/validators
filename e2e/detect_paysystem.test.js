@@ -8,7 +8,7 @@ describe('page start', () => {
 
     beforeEach(async () => {
         browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             slowMo: 100,
             devtools: true,
         })
@@ -17,21 +17,21 @@ describe('page start', () => {
         await page.goto('http://localhost:9000');
     })
 
-    // test ('delete stroke', async() => {
-    //     const form = await page.waitForSelector('.form');
+    test ('delete stroke', async() => {
+        const form = await page.waitForSelector('.form');
 
-    //     const input = await form.$('.card_number');
-    //     const submit = await form.$('.submit');
+        const input = await form.$('.card_number');
+        const submit = await form.$('.submit');
 
-    //     await input.type('5555555555554444');
-    //     await submit.click();
-    //     await page.waitForSelector('.mastercard.stroke')
-    //     await input.type('525');
+        await input.type('5555555555554444');
+        await submit.click();
+        await page.waitForSelector('.mastercard.stroke')
+        await input.type('525');
 
-    //     const classToCheck = '.stroke'
-    //     const element = await page.$(classToCheck)
-    //     expect(element).toBeNull()
-    // });
+        const classToCheck = '.stroke'
+        const element = await page.$(classToCheck)
+        expect(element).toBeNull()
+    });
     
     test ('enter card number alert', async() => {
         let alertMessage = null;
